@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,7 @@ namespace SKiJumping
         private decimal _windpoints;
         private decimal _creditscore;
         private string _hlpwind;
+        private string _hlpwind2;
 
         public decimal Wind
         {
@@ -35,22 +37,29 @@ namespace SKiJumping
         {
             _windpoints = _wind * (_kpoint - 36) / 20;
             
-            //_windpoints = 
-            _hlpwind = Convert.ToString(_windpoints);
-            _hlpwind = _hlpwind.Substring(_hlpwind.Length - 1);
-            _windpoints = Math.Round(_windpoints);
-
-            if (int.Parse(_hlpwind) < 3)
+            _hlpwind = Convert.ToString(_windpoints, CultureInfo.InvariantCulture);
+            
+            for (int i = 0; i < _hlpwind.Length; i++)
             {
-                _windpoints = _windpoints - 1;
+                if (_hlpwind.Substring(i, 1) != ",") continue;
+                _hlpwind2 = _hlpwind.Substring(i + 1);
+                i = _hlpwind.Length;
             }
-            else if (int.Parse(_hlpwind) >= 3 && int.Parse(_hlpwind) < 7)
+
+            _windpoints = Math.Ceiling(_windpoints);
+            _windpoints = _windpoints - 1; 
+
+            if (int.Parse(_hlpwind2) >= 3 && int.Parse(_hlpwind2) < 7)
             {
                 _windpoints = _windpoints + 0.5m;
             }
-            else
+            else if (int.Parse(_hlpwind2) >= 7 )
             {
                 _windpoints = _windpoints +1;
+            }
+            else
+            {
+                _windpoints = _windpoints;
             }
             _windpoints = _windpoints * _creditscore;
 

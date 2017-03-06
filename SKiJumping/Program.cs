@@ -16,7 +16,7 @@ namespace SKiJumping
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSkijumping());
+            Application.Run(new FrmSkijumping());
         }
     }
 }
