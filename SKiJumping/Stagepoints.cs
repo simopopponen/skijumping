@@ -8,32 +8,18 @@ namespace SKiJumping
 {
     class Stagepoints
     {
-        private decimal _stage;
-        private decimal _meters;
         private decimal _impact;
-        private decimal _creditscore;
 
-        public decimal Stage
-        {
-            get { return _stage; }
-            set { _stage = value; }
-        }
+        public decimal Stage { get; set; }
 
-        public decimal Meters
-        {
-            get { return _meters; }
-            set { _meters = value; }
-        }
+        public decimal Meters { get; set; }
 
-        public decimal CreditScore
-        {
-            get { return _creditscore; }
-            set { _creditscore = value; }
-        }
+        public decimal CreditScore { get; set; }
+
         public decimal CalculateStageImpact()
         {
-            _impact = _stage * _meters;
-            _impact = _impact * _creditscore;
+            _impact = Stage * Meters;
+            _impact = _impact * CreditScore;
 
             return _impact;
         }

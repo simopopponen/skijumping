@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SKiJumping
@@ -28,6 +21,7 @@ namespace SKiJumping
             txtWind.Text = "1,4";
             txtkpoint.Text = "116";
             txtcreditscore.Text = "1,8";
+            txtLength.Text = "124";
             nudJudge1.Text = "18";
             nudJudge2.Text = "18,5";
             nudJudge3.Text = "18,5";

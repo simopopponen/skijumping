@@ -8,36 +8,20 @@ namespace SKiJumping
 {
     class Lengthpoints
     {
-        private decimal _kpoint;
-        private decimal _length;
-        private decimal _creditscore;
         private decimal _point;
         private decimal _lpoint;
 
-        public decimal KPoint
-        {
-            get { return _kpoint; }
-            set { _kpoint = value; }
-        }
+        public decimal KPoint { get; set; }
 
-        public decimal Length
-        {
-            get { return _length; }
-            set { _length = value; }
-        }
+        public decimal Length { get; set; }
 
-        public decimal Creditscore
-        {
-            get { return _creditscore; }
-            set { _creditscore = value; }
-        }
+        public decimal Creditscore { get; set; }
 
         public decimal CalculateLengthPoints()
         {
-            //8 = 124 - 116
-            _lpoint = _length - _kpoint;
-            _point = 60 + _lpoint * _creditscore;
-
+            _lpoint = Length - KPoint;
+            _point = 60 + _lpoint * Creditscore;
+            
             return _point;
         }
     }
