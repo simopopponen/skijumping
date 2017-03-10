@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.grpJudge = new System.Windows.Forms.GroupBox();
             this.nudJudge5 = new System.Windows.Forms.NumericUpDown();
             this.nudJudge4 = new System.Windows.Forms.NumericUpDown();
@@ -42,7 +43,10 @@
             this.lblJudge2 = new System.Windows.Forms.Label();
             this.lblJudge1 = new System.Windows.Forms.Label();
             this.grpSolidData = new System.Windows.Forms.GroupBox();
+            this.lblHillName = new System.Windows.Forms.Label();
+            this.lblHill = new System.Windows.Forms.Label();
             this.txtcreditscore = new System.Windows.Forms.TextBox();
+            this.btnHill = new System.Windows.Forms.Button();
             this.txtkpoint = new System.Windows.Forms.TextBox();
             this.lblcreditscore = new System.Windows.Forms.Label();
             this.lblkpoint = new System.Windows.Forms.Label();
@@ -64,7 +68,19 @@
             this.lblWindpoints = new System.Windows.Forms.Label();
             this.txtWindpoints = new System.Windows.Forms.TextBox();
             this.txtWind = new System.Windows.Forms.TextBox();
-            this.btnHill = new System.Windows.Forms.Button();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.grpBoxJumper = new System.Windows.Forms.GroupBox();
+            this.cboJumper = new System.Windows.Forms.ComboBox();
+            this.rdbtnRound2 = new System.Windows.Forms.RadioButton();
+            this.rdbtnRound1 = new System.Windows.Forms.RadioButton();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.skiJumpingDataSet = new SKiJumping.SkiJumpingDataSet();
+            this.skiJumpingDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.skiJumpingDataSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.btnClear = new System.Windows.Forms.Button();
+            this.openJumperDialog = new System.Windows.Forms.OpenFileDialog();
+            this.btnReadJumpers = new System.Windows.Forms.Button();
+            this.grpRound = new System.Windows.Forms.GroupBox();
             this.grpJudge.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudJudge5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudJudge4)).BeginInit();
@@ -76,6 +92,12 @@
             this.groupBox2.SuspendLayout();
             this.grpStageImpact.SuspendLayout();
             this.grpWind.SuspendLayout();
+            this.grpBoxJumper.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skiJumpingDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skiJumpingDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skiJumpingDataSetBindingSource1)).BeginInit();
+            this.grpRound.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpJudge
@@ -93,10 +115,10 @@
             this.grpJudge.Controls.Add(this.lblJudge2);
             this.grpJudge.Controls.Add(this.lblJudge1);
             this.grpJudge.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.grpJudge.Location = new System.Drawing.Point(22, 219);
+            this.grpJudge.Location = new System.Drawing.Point(22, 248);
             this.grpJudge.Name = "grpJudge";
             this.grpJudge.Size = new System.Drawing.Size(393, 102);
-            this.grpJudge.TabIndex = 0;
+            this.grpJudge.TabIndex = 4;
             this.grpJudge.TabStop = false;
             this.grpJudge.Text = "Tuomarien pisteet:";
             // 
@@ -116,7 +138,8 @@
             0});
             this.nudJudge5.Name = "nudJudge5";
             this.nudJudge5.Size = new System.Drawing.Size(42, 20);
-            this.nudJudge5.TabIndex = 16;
+            this.nudJudge5.TabIndex = 10;
+            this.nudJudge5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // nudJudge4
             // 
@@ -134,7 +157,8 @@
             0});
             this.nudJudge4.Name = "nudJudge4";
             this.nudJudge4.Size = new System.Drawing.Size(42, 20);
-            this.nudJudge4.TabIndex = 15;
+            this.nudJudge4.TabIndex = 9;
+            this.nudJudge4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // nudJudge3
             // 
@@ -152,7 +176,8 @@
             0});
             this.nudJudge3.Name = "nudJudge3";
             this.nudJudge3.Size = new System.Drawing.Size(42, 20);
-            this.nudJudge3.TabIndex = 14;
+            this.nudJudge3.TabIndex = 8;
+            this.nudJudge3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // nudJudge2
             // 
@@ -170,7 +195,8 @@
             0});
             this.nudJudge2.Name = "nudJudge2";
             this.nudJudge2.Size = new System.Drawing.Size(42, 20);
-            this.nudJudge2.TabIndex = 13;
+            this.nudJudge2.TabIndex = 7;
+            this.nudJudge2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // nudJudge1
             // 
@@ -188,7 +214,8 @@
             0});
             this.nudJudge1.Name = "nudJudge1";
             this.nudJudge1.Size = new System.Drawing.Size(42, 20);
-            this.nudJudge1.TabIndex = 12;
+            this.nudJudge1.TabIndex = 6;
+            this.nudJudge1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblJudgePoints
             // 
@@ -205,7 +232,7 @@
             this.txtJudgePoints.Location = new System.Drawing.Point(305, 49);
             this.txtJudgePoints.Name = "txtJudgePoints";
             this.txtJudgePoints.Size = new System.Drawing.Size(76, 20);
-            this.txtJudgePoints.TabIndex = 10;
+            this.txtJudgePoints.TabIndex = 1;
             this.txtJudgePoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblJudge5
@@ -255,37 +282,69 @@
             // 
             // grpSolidData
             // 
+            this.grpSolidData.Controls.Add(this.lblHillName);
+            this.grpSolidData.Controls.Add(this.lblHill);
             this.grpSolidData.Controls.Add(this.txtcreditscore);
+            this.grpSolidData.Controls.Add(this.btnHill);
             this.grpSolidData.Controls.Add(this.txtkpoint);
             this.grpSolidData.Controls.Add(this.lblcreditscore);
             this.grpSolidData.Controls.Add(this.lblkpoint);
             this.grpSolidData.Location = new System.Drawing.Point(22, 21);
             this.grpSolidData.Name = "grpSolidData";
-            this.grpSolidData.Size = new System.Drawing.Size(393, 100);
-            this.grpSolidData.TabIndex = 1;
+            this.grpSolidData.Size = new System.Drawing.Size(393, 123);
+            this.grpSolidData.TabIndex = 0;
             this.grpSolidData.TabStop = false;
             this.grpSolidData.Text = "Lähtöarvot:";
             // 
+            // lblHillName
+            // 
+            this.lblHillName.AutoSize = true;
+            this.lblHillName.Location = new System.Drawing.Point(21, 56);
+            this.lblHillName.Name = "lblHillName";
+            this.lblHillName.Size = new System.Drawing.Size(30, 13);
+            this.lblHillName.TabIndex = 3;
+            this.lblHillName.Text = "Lahti";
+            // 
+            // lblHill
+            // 
+            this.lblHill.AutoSize = true;
+            this.lblHill.Location = new System.Drawing.Point(21, 20);
+            this.lblHill.Name = "lblHill";
+            this.lblHill.Size = new System.Drawing.Size(33, 13);
+            this.lblHill.TabIndex = 2;
+            this.lblHill.Text = "Mäki:";
+            // 
             // txtcreditscore
             // 
-            this.txtcreditscore.Location = new System.Drawing.Point(87, 56);
+            this.txtcreditscore.Location = new System.Drawing.Point(230, 56);
             this.txtcreditscore.Name = "txtcreditscore";
             this.txtcreditscore.Size = new System.Drawing.Size(62, 20);
-            this.txtcreditscore.TabIndex = 3;
+            this.txtcreditscore.TabIndex = 1;
             this.txtcreditscore.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // btnHill
+            // 
+            this.btnHill.Location = new System.Drawing.Point(18, 86);
+            this.btnHill.Margin = new System.Windows.Forms.Padding(2);
+            this.btnHill.Name = "btnHill";
+            this.btnHill.Size = new System.Drawing.Size(91, 23);
+            this.btnHill.TabIndex = 13;
+            this.btnHill.Text = "Mäen valinta";
+            this.btnHill.UseVisualStyleBackColor = true;
+            this.btnHill.Click += new System.EventHandler(this.btnHill_Click);
             // 
             // txtkpoint
             // 
-            this.txtkpoint.Location = new System.Drawing.Point(12, 56);
+            this.txtkpoint.Location = new System.Drawing.Point(155, 56);
             this.txtkpoint.Name = "txtkpoint";
             this.txtkpoint.Size = new System.Drawing.Size(62, 20);
-            this.txtkpoint.TabIndex = 2;
+            this.txtkpoint.TabIndex = 0;
             this.txtkpoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblcreditscore
             // 
             this.lblcreditscore.AutoSize = true;
-            this.lblcreditscore.Location = new System.Drawing.Point(84, 20);
+            this.lblcreditscore.Location = new System.Drawing.Point(227, 20);
             this.lblcreditscore.Name = "lblcreditscore";
             this.lblcreditscore.Size = new System.Drawing.Size(110, 13);
             this.lblcreditscore.TabIndex = 1;
@@ -294,7 +353,7 @@
             // lblkpoint
             // 
             this.lblkpoint.AutoSize = true;
-            this.lblkpoint.Location = new System.Drawing.Point(9, 20);
+            this.lblkpoint.Location = new System.Drawing.Point(152, 20);
             this.lblkpoint.Name = "lblkpoint";
             this.lblkpoint.Size = new System.Drawing.Size(42, 13);
             this.lblkpoint.TabIndex = 0;
@@ -302,10 +361,10 @@
             // 
             // btnCalculate
             // 
-            this.btnCalculate.Location = new System.Drawing.Point(22, 463);
+            this.btnCalculate.Location = new System.Drawing.Point(22, 543);
             this.btnCalculate.Name = "btnCalculate";
             this.btnCalculate.Size = new System.Drawing.Size(75, 23);
-            this.btnCalculate.TabIndex = 2;
+            this.btnCalculate.TabIndex = 12;
             this.btnCalculate.Text = "Laske";
             this.btnCalculate.UseVisualStyleBackColor = true;
             this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
@@ -313,10 +372,10 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.txtTotalPoints);
-            this.groupBox1.Location = new System.Drawing.Point(22, 343);
+            this.groupBox1.Location = new System.Drawing.Point(22, 356);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(393, 67);
-            this.groupBox1.TabIndex = 3;
+            this.groupBox1.Size = new System.Drawing.Size(795, 65);
+            this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Yhteispisteet:";
             // 
@@ -324,28 +383,29 @@
             // 
             this.txtTotalPoints.Enabled = false;
             this.txtTotalPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalPoints.Location = new System.Drawing.Point(139, 19);
+            this.txtTotalPoints.Location = new System.Drawing.Point(343, 19);
             this.txtTotalPoints.Name = "txtTotalPoints";
             this.txtTotalPoints.Size = new System.Drawing.Size(114, 29);
-            this.txtTotalPoints.TabIndex = 0;
+            this.txtTotalPoints.TabIndex = 11;
             this.txtTotalPoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtTotalPoints.TextChanged += new System.EventHandler(this.txtTotalPoints_TextChanged);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lblLengthpoints);
             this.groupBox2.Controls.Add(this.txtLengthpoints);
             this.groupBox2.Controls.Add(this.txtLength);
-            this.groupBox2.Location = new System.Drawing.Point(22, 128);
+            this.groupBox2.Location = new System.Drawing.Point(427, 248);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(393, 85);
-            this.groupBox2.TabIndex = 4;
+            this.groupBox2.Size = new System.Drawing.Size(268, 102);
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Hypyn pituus:";
             // 
             // lblLengthpoints
             // 
             this.lblLengthpoints.AutoSize = true;
-            this.lblLengthpoints.Location = new System.Drawing.Point(302, 14);
+            this.lblLengthpoints.Location = new System.Drawing.Point(172, 16);
             this.lblLengthpoints.Name = "lblLengthpoints";
             this.lblLengthpoints.Size = new System.Drawing.Size(70, 13);
             this.lblLengthpoints.TabIndex = 12;
@@ -354,9 +414,9 @@
             // txtLengthpoints
             // 
             this.txtLengthpoints.Enabled = false;
-            this.txtLengthpoints.Location = new System.Drawing.Point(305, 39);
+            this.txtLengthpoints.Location = new System.Drawing.Point(175, 39);
             this.txtLengthpoints.Name = "txtLengthpoints";
-            this.txtLengthpoints.Size = new System.Drawing.Size(76, 20);
+            this.txtLengthpoints.Size = new System.Drawing.Size(62, 20);
             this.txtLengthpoints.TabIndex = 1;
             this.txtLengthpoints.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -364,16 +424,16 @@
             // 
             this.txtLength.Location = new System.Drawing.Point(12, 39);
             this.txtLength.Name = "txtLength";
-            this.txtLength.Size = new System.Drawing.Size(100, 20);
-            this.txtLength.TabIndex = 0;
+            this.txtLength.Size = new System.Drawing.Size(62, 20);
+            this.txtLength.TabIndex = 4;
             this.txtLength.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtStage
             // 
-            this.txtStage.Location = new System.Drawing.Point(6, 56);
+            this.txtStage.Location = new System.Drawing.Point(12, 56);
             this.txtStage.Name = "txtStage";
             this.txtStage.Size = new System.Drawing.Size(62, 20);
-            this.txtStage.TabIndex = 4;
+            this.txtStage.TabIndex = 2;
             this.txtStage.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblStage
@@ -393,10 +453,10 @@
             this.grpStageImpact.Controls.Add(this.txtMeters);
             this.grpStageImpact.Controls.Add(this.lblStage);
             this.grpStageImpact.Controls.Add(this.txtStage);
-            this.grpStageImpact.Location = new System.Drawing.Point(421, 21);
+            this.grpStageImpact.Location = new System.Drawing.Point(427, 21);
             this.grpStageImpact.Name = "grpStageImpact";
-            this.grpStageImpact.Size = new System.Drawing.Size(261, 100);
-            this.grpStageImpact.TabIndex = 5;
+            this.grpStageImpact.Size = new System.Drawing.Size(268, 123);
+            this.grpStageImpact.TabIndex = 1;
             this.grpStageImpact.TabStop = false;
             this.grpStageImpact.Text = "Lähtölavan vaikutus:";
             // 
@@ -412,7 +472,7 @@
             // txtStagepoints
             // 
             this.txtStagepoints.Enabled = false;
-            this.txtStagepoints.Location = new System.Drawing.Point(172, 56);
+            this.txtStagepoints.Location = new System.Drawing.Point(175, 56);
             this.txtStagepoints.Name = "txtStagepoints";
             this.txtStagepoints.Size = new System.Drawing.Size(62, 20);
             this.txtStagepoints.TabIndex = 8;
@@ -432,7 +492,7 @@
             this.txtMeters.Location = new System.Drawing.Point(91, 56);
             this.txtMeters.Name = "txtMeters";
             this.txtMeters.Size = new System.Drawing.Size(62, 20);
-            this.txtMeters.TabIndex = 6;
+            this.txtMeters.TabIndex = 3;
             this.txtMeters.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // grpWind
@@ -440,17 +500,17 @@
             this.grpWind.Controls.Add(this.lblWindpoints);
             this.grpWind.Controls.Add(this.txtWindpoints);
             this.grpWind.Controls.Add(this.txtWind);
-            this.grpWind.Location = new System.Drawing.Point(427, 128);
+            this.grpWind.Location = new System.Drawing.Point(427, 150);
             this.grpWind.Name = "grpWind";
-            this.grpWind.Size = new System.Drawing.Size(254, 85);
-            this.grpWind.TabIndex = 6;
+            this.grpWind.Size = new System.Drawing.Size(268, 85);
+            this.grpWind.TabIndex = 3;
             this.grpWind.TabStop = false;
             this.grpWind.Text = "Tuulen vaikutus:";
             // 
             // lblWindpoints
             // 
             this.lblWindpoints.AutoSize = true;
-            this.lblWindpoints.Location = new System.Drawing.Point(166, 12);
+            this.lblWindpoints.Location = new System.Drawing.Point(173, 16);
             this.lblWindpoints.Name = "lblWindpoints";
             this.lblWindpoints.Size = new System.Drawing.Size(64, 13);
             this.lblWindpoints.TabIndex = 11;
@@ -459,7 +519,7 @@
             // txtWindpoints
             // 
             this.txtWindpoints.Enabled = false;
-            this.txtWindpoints.Location = new System.Drawing.Point(166, 39);
+            this.txtWindpoints.Location = new System.Drawing.Point(175, 39);
             this.txtWindpoints.Name = "txtWindpoints";
             this.txtWindpoints.Size = new System.Drawing.Size(62, 20);
             this.txtWindpoints.TabIndex = 10;
@@ -467,30 +527,136 @@
             // 
             // txtWind
             // 
-            this.txtWind.Location = new System.Drawing.Point(6, 39);
+            this.txtWind.Location = new System.Drawing.Point(12, 39);
             this.txtWind.Name = "txtWind";
-            this.txtWind.Size = new System.Drawing.Size(59, 20);
-            this.txtWind.TabIndex = 0;
+            this.txtWind.Size = new System.Drawing.Size(62, 20);
+            this.txtWind.TabIndex = 5;
             this.txtWind.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // btnHill
+            // btnClose
             // 
-            this.btnHill.Location = new System.Drawing.Point(113, 462);
-            this.btnHill.Margin = new System.Windows.Forms.Padding(2);
-            this.btnHill.Name = "btnHill";
-            this.btnHill.Size = new System.Drawing.Size(91, 23);
-            this.btnHill.TabIndex = 7;
-            this.btnHill.Text = "Mäen valinta";
-            this.btnHill.UseVisualStyleBackColor = true;
-            this.btnHill.Visible = false;
-            this.btnHill.Click += new System.EventHandler(this.btnHill_Click);
+            this.btnClose.Location = new System.Drawing.Point(690, 543);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(91, 23);
+            this.btnClose.TabIndex = 14;
+            this.btnClose.Text = "Sulje";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // grpBoxJumper
+            // 
+            this.grpBoxJumper.Controls.Add(this.cboJumper);
+            this.grpBoxJumper.Location = new System.Drawing.Point(22, 150);
+            this.grpBoxJumper.Name = "grpBoxJumper";
+            this.grpBoxJumper.Size = new System.Drawing.Size(393, 85);
+            this.grpBoxJumper.TabIndex = 16;
+            this.grpBoxJumper.TabStop = false;
+            this.grpBoxJumper.Text = "Hyppääjä:";
+            // 
+            // cboJumper
+            // 
+            this.cboJumper.FormattingEnabled = true;
+            this.cboJumper.Location = new System.Drawing.Point(9, 19);
+            this.cboJumper.Name = "cboJumper";
+            this.cboJumper.Size = new System.Drawing.Size(372, 21);
+            this.cboJumper.TabIndex = 0;
+            // 
+            // rdbtnRound2
+            // 
+            this.rdbtnRound2.AutoSize = true;
+            this.rdbtnRound2.Location = new System.Drawing.Point(6, 106);
+            this.rdbtnRound2.Name = "rdbtnRound2";
+            this.rdbtnRound2.Size = new System.Drawing.Size(66, 17);
+            this.rdbtnRound2.TabIndex = 2;
+            this.rdbtnRound2.Text = "Kierros 2";
+            this.rdbtnRound2.UseVisualStyleBackColor = true;
+            this.rdbtnRound2.Click += new System.EventHandler(this.rdbtnRound2_Click);
+            // 
+            // rdbtnRound1
+            // 
+            this.rdbtnRound1.AutoSize = true;
+            this.rdbtnRound1.Checked = true;
+            this.rdbtnRound1.Location = new System.Drawing.Point(6, 28);
+            this.rdbtnRound1.Name = "rdbtnRound1";
+            this.rdbtnRound1.Size = new System.Drawing.Size(66, 17);
+            this.rdbtnRound1.TabIndex = 1;
+            this.rdbtnRound1.TabStop = true;
+            this.rdbtnRound1.Text = "Kierros 1";
+            this.rdbtnRound1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(22, 427);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(795, 100);
+            this.dataGridView1.TabIndex = 17;
+            // 
+            // skiJumpingDataSet
+            // 
+            this.skiJumpingDataSet.DataSetName = "SkiJumpingDataSet";
+            this.skiJumpingDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // skiJumpingDataSetBindingSource
+            // 
+            this.skiJumpingDataSetBindingSource.DataSource = this.skiJumpingDataSet;
+            this.skiJumpingDataSetBindingSource.Position = 0;
+            // 
+            // skiJumpingDataSetBindingSource1
+            // 
+            this.skiJumpingDataSetBindingSource1.DataSource = this.skiJumpingDataSet;
+            this.skiJumpingDataSetBindingSource1.Position = 0;
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(379, 543);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(100, 23);
+            this.btnClear.TabIndex = 18;
+            this.btnClear.Text = "Tyhjennä tiedot";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+            // 
+            // openJumperDialog
+            // 
+            this.openJumperDialog.FileName = "openJumperDialog";
+            // 
+            // btnReadJumpers
+            // 
+            this.btnReadJumpers.Location = new System.Drawing.Point(486, 542);
+            this.btnReadJumpers.Name = "btnReadJumpers";
+            this.btnReadJumpers.Size = new System.Drawing.Size(94, 23);
+            this.btnReadJumpers.TabIndex = 19;
+            this.btnReadJumpers.Text = "Lue hyppääjät...";
+            this.btnReadJumpers.UseVisualStyleBackColor = true;
+            this.btnReadJumpers.Click += new System.EventHandler(this.btnReadJumpers_Click);
+            // 
+            // grpRound
+            // 
+            this.grpRound.Controls.Add(this.rdbtnRound1);
+            this.grpRound.Controls.Add(this.rdbtnRound2);
+            this.grpRound.Location = new System.Drawing.Point(701, 21);
+            this.grpRound.Name = "grpRound";
+            this.grpRound.Size = new System.Drawing.Size(116, 329);
+            this.grpRound.TabIndex = 3;
+            this.grpRound.TabStop = false;
+            this.grpRound.Text = "Kierros";
             // 
             // FrmSkijumping
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(703, 513);
-            this.Controls.Add(this.btnHill);
+            this.ClientSize = new System.Drawing.Size(829, 587);
+            this.Controls.Add(this.grpRound);
+            this.Controls.Add(this.btnReadJumpers);
+            this.Controls.Add(this.btnClear);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.grpBoxJumper);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.grpWind);
             this.Controls.Add(this.grpStageImpact);
             this.Controls.Add(this.groupBox2);
@@ -517,6 +683,13 @@
             this.grpStageImpact.PerformLayout();
             this.grpWind.ResumeLayout(false);
             this.grpWind.PerformLayout();
+            this.grpBoxJumper.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skiJumpingDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skiJumpingDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.skiJumpingDataSetBindingSource1)).EndInit();
+            this.grpRound.ResumeLayout(false);
+            this.grpRound.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -560,6 +733,21 @@
         private System.Windows.Forms.NumericUpDown nudJudge3;
         private System.Windows.Forms.NumericUpDown nudJudge2;
         private System.Windows.Forms.NumericUpDown nudJudge1;
+        private System.Windows.Forms.Label lblHillName;
+        private System.Windows.Forms.Label lblHill;
+        private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.GroupBox grpBoxJumper;
+        private System.Windows.Forms.ComboBox cboJumper;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource skiJumpingDataSetBindingSource;
+        private SkiJumpingDataSet skiJumpingDataSet;
+        private System.Windows.Forms.BindingSource skiJumpingDataSetBindingSource1;
+        private System.Windows.Forms.RadioButton rdbtnRound2;
+        private System.Windows.Forms.RadioButton rdbtnRound1;
+        private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.OpenFileDialog openJumperDialog;
+        private System.Windows.Forms.Button btnReadJumpers;
+        private System.Windows.Forms.GroupBox grpRound;
     }
 }
 
