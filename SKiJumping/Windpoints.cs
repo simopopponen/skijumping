@@ -23,31 +23,38 @@ namespace SKiJumping
         {
             _windpoints = Wind * (KPoint - 36) / 20;
 
-            _hlpwind = Convert.ToString(_windpoints, CultureInfo.InvariantCulture);
-
-            for (int i = 0; i < _hlpwind.Length; i++)
+            if (_windpoints != 0)
             {
-                if (_hlpwind.Substring(i, 1) == "," || _hlpwind.Substring(i, 1) == ".")
+                _hlpwind = Convert.ToString(_windpoints, CultureInfo.InvariantCulture);
+
+
+                for (int i = 0; i < _hlpwind.Length; i++)
                 {
-                    _hlpwind2 = _hlpwind.Substring(i+1,1 );
-                    i = _hlpwind.Length;
+                    if (_hlpwind.Substring(i, 1) == "," || _hlpwind.Substring(i, 1) == ".")
+                    {
+                        _hlpwind2 = _hlpwind.Substring(i + 1, 1);
+                        i = _hlpwind.Length;
+                    }
                 }
-            }
-            
-            _windpoints = Math.Ceiling(_windpoints);
-            _windpoints = _windpoints - 1; 
 
-            if (int.Parse(_hlpwind2) >= 3 && int.Parse(_hlpwind2) < 7)
-            {
-                _windpoints = _windpoints + 0.5m;
-            }
-            else if (int.Parse(_hlpwind2) >= 7 )
-            {
-                _windpoints = _windpoints +1;
-            }
-            else
-            {
+                _windpoints = Math.Ceiling(_windpoints);
+                _windpoints = _windpoints - 1;
 
+                if (_hlpwind2 != null)
+                {
+                    if (int.Parse(_hlpwind2) >= 3 && int.Parse(_hlpwind2) < 7)
+                    {
+                        _windpoints = _windpoints + 0.5m;
+                    }
+                    else if (int.Parse(_hlpwind2) >= 7)
+                    {
+                        _windpoints = _windpoints + 1;
+                    }
+                    else
+                    {
+
+                    }
+                }
             }
             _windpoints = _windpoints * CreditScore;
 

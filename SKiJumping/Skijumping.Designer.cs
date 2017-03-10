@@ -81,6 +81,7 @@
             this.openJumperDialog = new System.Windows.Forms.OpenFileDialog();
             this.btnReadJumpers = new System.Windows.Forms.Button();
             this.grpRound = new System.Windows.Forms.GroupBox();
+            this.helpProvider1 = new System.Windows.Forms.HelpProvider();
             this.grpJudge.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudJudge5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudJudge4)).BeginInit();
@@ -664,7 +665,10 @@
             this.Controls.Add(this.btnCalculate);
             this.Controls.Add(this.grpSolidData);
             this.Controls.Add(this.grpJudge);
+            this.HelpButton = true;
+            this.helpProvider1.SetHelpKeyword(this, "appl");
             this.Name = "FrmSkijumping";
+            this.helpProvider1.SetShowHelp(this, true);
             this.Text = "Mäkihyppy";
             this.grpJudge.ResumeLayout(false);
             this.grpJudge.PerformLayout();
@@ -748,6 +752,7 @@
         private System.Windows.Forms.OpenFileDialog openJumperDialog;
         private System.Windows.Forms.Button btnReadJumpers;
         private System.Windows.Forms.GroupBox grpRound;
+        private System.Windows.Forms.HelpProvider helpProvider1;
     }
 }
 
